@@ -4,7 +4,7 @@ html, body { height: 100%; margin: 0; }
 /* Fondo responsivo (sin fixed en móviles) */
 body{
   min-height: 100svh; /* mejor en móviles que 100vh */
-  background: url('fotoo.JPG') center / cover no-repeat;
+  background: url('tofoo.jpg') center / cover no-repeat;
   color: #fff;
   display: grid;
   place-items: center;
@@ -39,3 +39,4 @@ p{
     background-attachment: fixed; /* muchos móviles lo ignoran; mejor activarlo solo en desktop */
   }
 }
+
