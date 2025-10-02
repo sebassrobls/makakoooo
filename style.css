@@ -1,16 +1,41 @@
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-image: url('fotoo.JPG');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+/* Ocupa la altura útil en móviles y quita márgenes */
+html, body { height: 100%; margin: 0; }
+
+/* Fondo responsivo (sin fixed en móviles) */
+body{
+  min-height: 100svh; /* mejor en móviles que 100vh */
+  background: url('fotoo.JPG') center / cover no-repeat;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 24px; /* respira en pantallas chicas */
 }
 
+/* Tarjeta para que el texto se lea siempre */
+.container{
+  width: min(92%, 720px);
+  padding: clamp(16px, 4vw, 40px);
+  background: rgba(0,0,0,.45);
+  border-radius: 16px;
+  backdrop-filter: blur(2px);
+}
+
+/* Tipografías fluidas */
+h1{ 
+  margin: 0 0 .5em;
+  font-size: clamp(24px, 6vw, 44px);
+  line-height: 1.15;
+}
+p{
+  margin: 0;
+  font-size: clamp(14px, 4vw, 18px);
+  line-height: 1.6;
+}
+
+/* En pantallas medianas o grandes podés activar el efecto "fixed" */
+@media (min-width: 768px){
+  body{
+    background-attachment: fixed; /* muchos móviles lo ignoran; mejor activarlo solo en desktop */
+  }
+}
